@@ -3,6 +3,7 @@ import {
   ArrowUpRight, CalendarDays, Code2, ExternalLink, Globe2,
   Mail, MapPin, Menu, Moon, Send, Sparkles, Sun, Terminal, X,
 } from 'lucide-react'
+import CustomCursor from './CustomCursor'
 
 const telegramUrl = 'https://t.me/Umarjonov_Behruz'
 const githubUrl = 'https://github.com'
@@ -13,7 +14,7 @@ const skills = [
   { name: 'JavaScript ES6+', mark: 'JS', color: 'bg-yellow-400 text-slate-950' },
   { name: 'React.js', mark: 'RE', color: 'bg-cyan-400 text-slate-950' },
   { name: 'Node.js', mark: 'NO', color: 'bg-emerald-500' },
-  { name: 'Tailwind CSS', mark: 'TW', color: 'bg-sky-400 text-slate-950' },
+  { name: 'TaybScript ', mark: 'TA', color: 'bg-sky-400 text-slate-950' },
 ]
 
 const projects = [
@@ -55,6 +56,7 @@ function App() {
 
   return (
     <div className="overflow-hidden">
+      <CustomCursor />
       <header className="fixed inset-x-0 top-0 z-50 border-b border-slate-200/70 bg-[#f4f7fb]/85 backdrop-blur-xl dark:border-white/10 dark:bg-[#0b1120]/85">
         <nav className="mx-auto flex h-18 max-w-6xl items-center justify-between px-5 py-4 sm:px-8" aria-label="Asosiy navigatsiya">
           <a href="#home" className="flex items-center gap-3 font-[Space_Grotesk] text-lg font-bold">
@@ -90,7 +92,7 @@ function App() {
               <div className="mb-6 inline-flex items-center gap-2 rounded-full border border-cyan-500/20 bg-cyan-500/10 px-4 py-2 text-sm font-bold text-cyan-700 dark:text-cyan-300">
                 <Sparkles size={16} /> Mavjud bo‘lishga tayyor
               </div>
-              <p className="mb-3 text-lg font-bold text-cyan-600 dark:text-cyan-400">Frontend Developer</p>
+              <p className="mb-3 text-lg font-bold text-cyan-600 dark:text-cyan-400">Frontend dasturchi</p>
               <h1 className="max-w-3xl font-[Space_Grotesk] text-5xl font-bold leading-[0.95] tracking-normal sm:text-7xl lg:text-8xl">
                 Umarjonov <span className="text-cyan-500">Behruzbek</span>
               </h1>
