@@ -4,6 +4,8 @@ import {
   Mail, MapPin, Menu, Moon, Send, Sparkles, Sun, Terminal, X,
 } from 'lucide-react'
 import CustomCursor from './CustomCursor'
+import CustomCircleCursor from './CustomCircleCursor'
+import FloatingBackground from './FloatingBackground'
 
 const telegramUrl = 'https://t.me/Umarjonov_Behruz'
 const githubUrl = 'https://github.com'
@@ -14,21 +16,28 @@ const skills = [
   { name: 'JavaScript ES6+', mark: 'JS', color: 'bg-yellow-400 text-slate-950' },
   { name: 'React.js', mark: 'RE', color: 'bg-cyan-400 text-slate-950' },
   { name: 'Node.js', mark: 'NO', color: 'bg-emerald-500' },
-  { name: 'TaybScript ', mark: 'TA', color: 'bg-sky-400 text-slate-950' },
+  { name: 'Taylvind css ', mark: 'Ty', color: 'bg-sky-400 text-slate-950' },
+  { name: 'git ', mark: 'GI', color: 'bg-sky-400 text-slate-950' },
+  { name: 'Github Copilot ', mark: 'GC', color: 'blue                     ` `     ' },
+ 
 ]
 
 const projects = [
   {
-    title: 'Digital Agency', description: 'Brendlar uchun zamonaviy, tezkor va moslashuvchan marketing platformasi.',
-    tags: ['React', 'Tailwind CSS'], accent: 'from-cyan-400 to-blue-600', code: 'DA',
+    title: 'MedCare',
+    description: 'Tibbiy ko‘riklar va shifokor qabullari uchun zamonaviy, qulay va tezkor web-ilova.',
+    tags: ['React', 'Tailwind CSS', 'Healthcare'],
+    accent: 'from-cyan-400 via-sky-500 to-blue-700',
+    code: 'MC',
+    liveUrl: 'https://shifokorkorigimedcare.vercel.app/',
   },
   {
-    title: 'Task Flow', description: 'Jamoa ishlarini rejalashtirish va kuzatish uchun qulay boshqaruv paneli.',
-    tags: ['JavaScript', 'CSS3'], accent: 'from-violet-400 to-fuchsia-600', code: 'TF',
-  },
-  {
-    title: 'Shop Space', description: 'Zamonaviy mahsulotlar katalogi va intuitiv xarid qilish tajribasi.',
-    tags: ['React', 'Node.js'], accent: 'from-orange-400 to-rose-500', code: 'SS',
+    title: 'Qariz',
+    description: 'Qarzlar, to‘lovlar va moliyaviy amaliyotlarni samarali boshqarish uchun hisob-kitob ilovasi.',
+    tags: ['React', 'Tailwind CSS', 'Dashboard'],
+    accent: 'from-violet-400 via-purple-500 to-fuchsia-700',
+    code: 'QR',
+    liveUrl: 'https://qariz-50s1dqoh5-behruzbek5.vercel.app/',
   },
 ]
 
@@ -55,8 +64,10 @@ function App() {
   ]
 
   return (
-    <div className="overflow-hidden">
+    <div className="relative isolate overflow-hidden">
+      <FloatingBackground />
       <CustomCursor />
+      <CustomCircleCursor />
       <header className="fixed inset-x-0 top-0 z-50 border-b border-slate-200/70 bg-[#f4f7fb]/85 backdrop-blur-xl dark:border-white/10 dark:bg-[#0b1120]/85">
         <nav className="mx-auto flex h-18 max-w-6xl items-center justify-between px-5 py-4 sm:px-8" aria-label="Asosiy navigatsiya">
           <a href="#home" className="flex items-center gap-3 font-[Space_Grotesk] text-lg font-bold">
@@ -84,7 +95,7 @@ function App() {
         )}
       </header>
 
-      <main>
+      <main className="relative z-10">
         <section id="home" className="relative min-h-screen pt-28">
           <div className="absolute left-[-8rem] top-40 h-72 w-72 rounded-full bg-cyan-300/20 blur-3xl" />
           <div className="relative mx-auto grid min-h-[calc(100vh-7rem)] max-w-6xl items-center gap-14 px-5 py-12 sm:px-8 lg:grid-cols-[1.15fr_.85fr] lg:py-16">
@@ -150,22 +161,38 @@ function App() {
         <section id="projects" className="py-24">
           <div className="mx-auto max-w-6xl px-5 sm:px-8">
             <SectionHeading eyebrow="Portfolio" title="Tanlangan loyihalar" />
-            <div className="mt-12 grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+            <div className="mt-12 grid gap-6 md:grid-cols-2">
               {projects.map((project, index) => (
-                <article key={project.title} className="group overflow-hidden rounded-lg border border-slate-200 bg-white transition duration-300 hover:-translate-y-2 dark:border-white/10 dark:bg-[#111827]">
-                  <div className={`relative grid aspect-[16/10] place-items-center overflow-hidden bg-gradient-to-br ${project.accent}`}>
-                    <div className="absolute inset-0 opacity-20" style={{ backgroundImage: 'radial-gradient(circle, white 1px, transparent 1px)', backgroundSize: '18px 18px' }} />
-                    <span className="font-[Space_Grotesk] text-6xl font-bold text-white/90">{project.code}</span>
-                    <span className="absolute right-4 top-4 rounded-full bg-white/20 px-3 py-1 text-xs font-bold text-white backdrop-blur">0{index + 1}</span>
+                <article key={project.title} className="group overflow-hidden rounded-2xl border border-slate-200 bg-white shadow-sm transition duration-500 hover:-translate-y-2 hover:border-cyan-400/60 hover:shadow-2xl hover:shadow-cyan-500/10 dark:border-white/10 dark:bg-[#111827]">
+                  <div className={`relative aspect-[16/10] overflow-hidden bg-gradient-to-br ${project.accent}`}>
+                    <div className="absolute inset-0 opacity-25" style={{ backgroundImage: 'radial-gradient(circle, white 1px, transparent 1px)', backgroundSize: '20px 20px' }} />
+                    <div className="absolute inset-x-7 top-7 bottom-0 rounded-t-xl border border-white/30 bg-slate-950/85 p-3 shadow-2xl backdrop-blur-sm transition duration-500 group-hover:inset-x-4 group-hover:top-4">
+                      <div className="flex items-center gap-1.5 border-b border-white/10 pb-3">
+                        <span className="h-2.5 w-2.5 rounded-full bg-red-400" />
+                        <span className="h-2.5 w-2.5 rounded-full bg-yellow-300" />
+                        <span className="h-2.5 w-2.5 rounded-full bg-emerald-400" />
+                        <span className="ml-2 h-4 flex-1 rounded-md bg-white/10" />
+                      </div>
+                      <div className="grid h-[calc(100%-29px)] grid-cols-[42px_1fr] gap-3 pt-3">
+                        <div className="rounded-lg bg-white/10" />
+                        <div className="grid grid-cols-2 gap-3">
+                          <div className="rounded-lg bg-white/10" />
+                          <div className="rounded-lg bg-white/10" />
+                          <div className="col-span-2 rounded-lg bg-white/10" />
+                        </div>
+                      </div>
+                    </div>
+                    <span className="absolute right-4 top-4 grid h-12 w-12 place-items-center rounded-xl bg-white/20 text-sm font-black text-white backdrop-blur-md">
+                      {project.code}
+                    </span>
                   </div>
                   <div className="p-6">
                     <h3 className="font-[Space_Grotesk] text-xl font-bold">{project.title}</h3>
                     <p className="mt-3 min-h-20 text-sm leading-6 text-slate-600 dark:text-slate-400">{project.description}</p>
                     <div className="mt-4 flex flex-wrap gap-2">{project.tags.map(tag => <span key={tag} className="rounded-full bg-slate-100 px-3 py-1 text-xs font-bold dark:bg-white/10">{tag}</span>)}</div>
-                    <div className="mt-6 grid grid-cols-2 gap-3">
-                      <a href={githubUrl} target="_blank" rel="noreferrer" className="inline-flex items-center justify-center gap-2 rounded-md border border-slate-300 py-2.5 text-sm font-bold dark:border-white/20"><Globe2 size={16} /> GitHub</a>
-                      <a href="#" className="inline-flex items-center justify-center gap-2 rounded-md bg-slate-950 py-2.5 text-sm font-bold text-white dark:bg-cyan-400 dark:text-slate-950">Demo <ExternalLink size={16} /></a>
-                    </div>
+                    <a href={project.liveUrl} target="_blank" rel="noopener noreferrer" className="mt-6 inline-flex w-full items-center justify-center gap-2 rounded-xl bg-slate-950 py-3 text-sm font-bold text-white transition duration-300 hover:bg-cyan-500 hover:text-slate-950 dark:bg-cyan-400 dark:text-slate-950 dark:hover:bg-cyan-300" aria-label={`${project.title} Live Demo`}>
+                      Live Demo <ExternalLink size={16} />
+                    </a>
                   </div>
                 </article>
               ))}
@@ -197,7 +224,7 @@ function App() {
         </section>
       </main>
 
-      <footer className="border-t border-slate-800 bg-slate-950 py-6 text-slate-400">
+      <footer className="relative z-10 border-t border-slate-800 bg-slate-950 py-6 text-slate-400">
         <div className="mx-auto flex max-w-6xl flex-col items-center justify-between gap-3 px-5 text-center text-sm sm:flex-row sm:px-8">
           <p>© {new Date().getFullYear()} Umarjonov Behruzbek</p>
           <a href="#home" className="inline-flex items-center gap-1 font-bold text-white">Boshiga qaytish <ArrowUpRight size={16} /></a>
