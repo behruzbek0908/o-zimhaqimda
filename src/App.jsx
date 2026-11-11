@@ -39,6 +39,15 @@ const projects = [
     code: 'QR',
     liveUrl: 'https://qariz-50s1dqoh5-behruzbek5.vercel.app/',
   },
+  {
+    title: 'Mazali taomlar',
+    description: 'Mazali taomlar va retseptlar bilan tanishish uchun veb-sayt.',
+    tags: ['Taomlar', 'Retseptlar'],
+    accent: 'from-amber-400 via-orange-500 to-rose-600',
+    code: 'MT',
+    liveUrl: 'https://mazalitaomlar-rt53.vercel.app',
+    buttonText: 'Demo',
+  },
 ]
 
 function App() {
@@ -190,8 +199,8 @@ function App() {
                     <h3 className="font-[Space_Grotesk] text-xl font-bold">{project.title}</h3>
                     <p className="mt-3 min-h-20 text-sm leading-6 text-slate-600 dark:text-slate-400">{project.description}</p>
                     <div className="mt-4 flex flex-wrap gap-2">{project.tags.map(tag => <span key={tag} className="rounded-full bg-slate-100 px-3 py-1 text-xs font-bold dark:bg-white/10">{tag}</span>)}</div>
-                    <a href={project.liveUrl} target="_blank" rel="noopener noreferrer" className="mt-6 inline-flex w-full items-center justify-center gap-2 rounded-xl bg-slate-950 py-3 text-sm font-bold text-white transition duration-300 hover:bg-cyan-500 hover:text-slate-950 dark:bg-cyan-400 dark:text-slate-950 dark:hover:bg-cyan-300" aria-label={`${project.title} Live Demo`}>
-                      Live Demo <ExternalLink size={16} />
+                    <a href={project.liveUrl} target="_blank" rel="noopener noreferrer" className="mt-6 inline-flex w-full items-center justify-center gap-2 rounded-xl bg-slate-950 py-3 text-sm font-bold text-white transition duration-300 hover:bg-cyan-500 hover:text-slate-950 dark:bg-cyan-400 dark:text-slate-950 dark:hover:bg-cyan-300" aria-label={`${project.title} ${project.buttonText || 'Live Demo'}`}>
+                      {project.buttonText || 'Live Demo'} <ExternalLink size={16} />
                     </a>
                   </div>
                 </article>
